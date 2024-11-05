@@ -50,7 +50,7 @@ int main(){
 
 	printf("..............................................................................\n");
 }
-
+//
 int newStudent(){
 	FILE *file = fopen("StudentInformation.csv","a");
 
