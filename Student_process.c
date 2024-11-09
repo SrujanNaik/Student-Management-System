@@ -1,9 +1,9 @@
 #include<stdio.h>
 #include<string.h>
 
-void studentDetails();
-void newStudent(int);
-void deleteStudent(int);
+void student_details();
+void add_new_student(int);
+void delete_student(int);
 void updateStudent();
 int linenumber();
 
@@ -16,6 +16,7 @@ int main(){
 	int line_number = linenumber();
 
 	printf("\n------------------------Welcome to Student Database---------------------------\n\n");
+	//repatedly asing user input
 	while(1){
 	printf("\nWhat you are seeaking?\n");
 	printf("1.All Student Details \n");
@@ -38,15 +39,15 @@ int main(){
 	switch(userchoice){
 		case 1 :
 			printf("\n-----------------------------------------------------------------------------------------\n");
-			studentDetails();
+			student_details();
 			printf("\n-----------------------------------------------------------------------------------------\n");
 			break;
 		case 2 :
-			newStudent(line_number);
+			add_new_student(line_number);
 			line_number++;
 			break;
 		case 3 :
-			deleteStudent(line_number);
+			delete_student(line_number);
 			line_number--;
 			break;
 		/*
@@ -87,7 +88,7 @@ int linenumber(){
 	return line_number;
 }
 
-void newStudent(int line_number){
+void add_new_student(int line_number){
 	FILE *file = fopen("StudentInformation.txt","a");
 
 	if(file == NULL){
@@ -126,7 +127,7 @@ void newStudent(int line_number){
 	printf("Suscessfull!");
 }
 
-void studentDetails(){
+void student_details(){
 	FILE *file = fopen("StudentInformation.txt","r");
 
 	if(file == NULL){
@@ -149,10 +150,10 @@ void studentDetails(){
 
 }
 
-void deleteStudent(int line_number){
+void delete_student(int line_number){
 
 	printf("\n-----------------------------------------------------------------------------------------\n");
-	studentDetails();
+	student_details();
 	printf("\n-----------------------------------------------------------------------------------------\n");
 
 	const char *filename = "StudentInformation.txt";
